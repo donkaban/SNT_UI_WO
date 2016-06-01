@@ -1,0 +1,237 @@
+<Interface xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation = "../../Interface.xsd">\
+<Assets>
+   <Texture name="snt_panel_setup_texture"     file="artwork/settings.dds"/>
+   <Texture name="snt_panel_textures"          file="artwork/textures.dds"/>
+</Assets>
+
+<Windows>
+   <Window name="snt_panel_template" inherits="EA_Window_Default" movable="false" savesettings = "false"> 
+      <Windows>
+         <FullResizeImage name="$parent_layer1" inherits="EA_FullResizeImage_TintableSolidBackground">
+            <Anchors>
+               <Anchor point="topleft" relativeTo="" relativePoint="topleft" />
+               <Anchor point="bottomright" relativeTo="" relativePoint="bottomright" />
+            </Anchors>
+          </FullResizeImage>
+          <FullResizeImage name="$parent_layer2" inherits="EA_FullResizeImage_TanBorder">
+            <Anchors>
+               <Anchor point="topleft" relativeTo="" relativePoint="topleft" />
+               <Anchor point="bottomright" relativeTo="" relativePoint="bottomright" />
+            </Anchors>
+         </FullResizeImage>
+          <DynamicImage name="$parent_layer3">
+            <Anchors>
+               <Anchor point="topleft" relativeTo="" relativePoint="topleft" />
+               <Anchor point="bottomright" relativeTo="" relativePoint="bottomright" />
+            </Anchors>
+         </DynamicImage>
+
+      </Windows>
+   </Window>
+
+<!-------------------------------------------------------------------------------------------------------------->
+
+   <Window name = "SNT_PANEL_SETUP_WINDOW" movable = "true" layer = "secondary" savesettings = "false">
+      <Size> <AbsPoint x = "512" y = "512"/> </Size>
+      <Anchors> <Anchor point = "center"relativePoint = "center" relativeTo = "Root"><AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+      <Windows>
+         <DynamicImage name = "$parent_back" layer="background" texture="snt_panel_setup_texture">
+            <Size> <AbsPoint x = "512" y = "512"/> </Size>
+            <Anchors> <Anchor point = "left" relativeTo = "$parent" relativePoint = "left"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            <TexCoords x="0" y="0" />
+         </DynamicImage>
+      
+      <Button name="$parent_create" inherits="EA_Button_Default" backgroundtexture="snt_panel_textures" highlighttexture="snt_panel_textures" >
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "30" y = "75"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_panel.new"/></EventHandlers>
+            <Size><AbsPoint x="64" y="24" /></Size>
+            <TexCoords>
+                <Normal          x="0"    y="0" /> <NormalHighlit   x="64"   y="0" />
+                <Pressed         x="128"  y="0" /> <Disabled        x="192"  y="0" />
+            </TexCoords>
+         </Button>
+
+         <Button name="$parent_delete" inherits="EA_Button_Default" backgroundtexture="snt_panel_textures" highlighttexture="snt_panel_textures" >
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "130" y = "75"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_panel.del"/></EventHandlers>
+            <Size><AbsPoint x="64" y="24" /></Size>
+            <TexCoords>
+                <Normal          x="0"    y="24" /> <NormalHighlit   x="64"   y="24" />
+                <Pressed         x="128"  y="24" /> <Disabled        x="192"  y="24" />
+            </TexCoords>
+         </Button>
+
+         <Button name="$parent_dec" inherits="EA_Button_Default" backgroundtexture="snt_panel_textures" highlighttexture="snt_panel_textures" >
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "230" y = "75"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_panel.dec"/></EventHandlers>
+            <Size><AbsPoint x="64" y="24" /></Size>
+            <TexCoords>
+                <Normal          x="0"    y="48" /> <NormalHighlit   x="64"   y="48" />
+                <Pressed         x="128"  y="48" /> <Disabled        x="192"  y="48" />
+            </TexCoords>
+         </Button>
+
+         <Button name="$parent_inc" inherits="EA_Button_Default" backgroundtexture="snt_panel_textures" highlighttexture="snt_panel_textures" >
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "400" y = "75"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_panel.inc"/></EventHandlers>
+            <Size><AbsPoint x="64" y="24" /></Size>
+            <TexCoords>
+                <Normal          x="0"    y="72" /><NormalHighlit   x="64"   y="72" />
+                <Pressed         x="128"  y="72" /><Disabled        x="192"  y="72" />
+            </TexCoords>
+         </Button>
+
+         <Label name = "$parent_wname"font = "font_clear_small_bold" textalign = "left" layer = "popup" popable = "false" handleinput = "false">
+            <Size><AbsPoint x = "150" y = "75"/> </Size>
+            <Color r = "255" g = "255" b = "100" a = "255"/> 
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "280" y = "80"/> </Anchor> </Anchors>
+         </Label>            
+
+<!-------------------------------------------------------------------------------------------------------------->
+
+
+         <SliderBar name = "$parent_R1" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "120" y = "26"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "30" y = "130"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_panel.slider_change"/></EventHandlers>
+         </SliderBar>
+         <SliderBar name = "$parent_G1" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "120" y = "26"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "30" y = "170"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_panel.slider_change"/></EventHandlers>
+         </SliderBar>
+         <SliderBar name = "$parent_B1" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "120" y = "26"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "30" y = "210"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_panel.slider_change"/></EventHandlers>
+         </SliderBar>
+
+<!-------------------------------------------------------------------------------------------------------------->
+
+         <SliderBar name = "$parent_R2" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "120" y = "26"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "200" y = "130"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_panel.slider_change"/></EventHandlers>
+         </SliderBar>
+         <SliderBar name = "$parent_G2" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "120" y = "26"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "200" y = "170"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_panel.slider_change"/></EventHandlers>
+         </SliderBar>
+         <SliderBar name = "$parent_B2" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "120" y = "26"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "200" y = "210"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_panel.slider_change"/></EventHandlers>
+         </SliderBar>
+
+<!-------------------------------------------------------------------------------------------------------------->
+
+
+         <SliderBar name = "$parent_A1" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "120" y = "26"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "370" y = "130"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_panel.slider_change"/></EventHandlers>
+         </SliderBar>
+         <SliderBar name = "$parent_A2" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "120" y = "26"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "370" y = "170"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_panel.slider_change"/></EventHandlers>
+         </SliderBar>
+         <SliderBar name = "$parent_A3" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "120" y = "26"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "370" y = "210"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_panel.slider_change"/></EventHandlers>
+         </SliderBar>
+
+
+<!-------------------------------------------------------------------------------------------------------------->
+        <EditBox name="$parent_T1" inherits="EA_EditBox_NoFrame" scrolling="horiz" history="10" taborder="1">
+            <Size><AbsPoint x="300" y="27" /></Size>
+            <EventHandlers><EventHandler event="OnKeyEnter" function="snt_panel.text_input" /></EventHandlers>
+            <TextOffset x="6" y="2" />
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "194" y = "296"/></Anchor></Anchors>
+        </EditBox>
+
+
+       <EditBox name="$parent_T2" inherits="EA_EditBox_NoFrame" scrolling="none" input="numbers" maxChars="4">
+            <Size><AbsPoint x="60" y="27" /></Size>
+            <EventHandlers><EventHandler event="OnKeyEnter" function="snt_panel.text_input" /></EventHandlers>
+            <TextOffset x="6" y="2" />
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "194" y = "326"/></Anchor></Anchors>
+        </EditBox>
+
+       <EditBox name="$parent_T3" inherits="EA_EditBox_NoFrame" scrolling="none" input="numbers" maxChars="4">
+            <Size><AbsPoint x="60" y="27" /></Size>
+            <EventHandlers><EventHandler event="OnKeyEnter" function="snt_panel.text_input" /></EventHandlers>
+            <TextOffset x="6" y="2" />
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "274" y = "326"/></Anchor></Anchors>
+        </EditBox>
+
+      <EditBox name="$parent_T4" inherits="EA_EditBox_NoFrame" scrolling="none" input="numbers" maxChars="4">
+            <Size><AbsPoint x="60" y="27" /></Size>
+            <EventHandlers><EventHandler event="OnKeyEnter" function="snt_panel.text_input" /></EventHandlers>
+            <TextOffset x="6" y="2" />
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "194" y = "362"/></Anchor></Anchors>
+        </EditBox>
+
+     <EditBox name="$parent_T5" inherits="EA_EditBox_NoFrame" scrolling="none" input="numbers" maxChars="4">
+            <Size><AbsPoint x="60" y="27" /></Size>
+            <EventHandlers><EventHandler event="OnKeyEnter" function="snt_panel.text_input" /></EventHandlers>
+            <TextOffset x="6" y="2" />
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "274" y = "362"/></Anchor></Anchors>
+        </EditBox>
+
+
+
+<!-------------------------------------------------------------------------------------------------------------->
+
+         <Button name="$parent_reload" inherits="EA_Button_Default" backgroundtexture="snt_panel_textures" highlighttexture="snt_panel_textures" >
+            <Anchors> <Anchor point = "bottom" relativePoint = "bottom" relativeTo = "$parent">
+            <AbsPoint x = "-150" y = "-50"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "InterfaceCore.ReloadUI"/></EventHandlers>
+            <Size><AbsPoint x="64" y="24" /></Size>
+            <TexCoords>
+                <Normal          x="0"    y="96" /><NormalHighlit   x="64"   y="96" />
+                <Pressed         x="128"  y="96" /><Disabled        x="192"  y="96" />
+            </TexCoords>
+         </Button>
+         <Button name="$parent_close" inherits="EA_Button_Default" backgroundtexture="snt_panel_textures" highlighttexture="snt_panel_textures" >
+            <Anchors> <Anchor point = "bottom" relativePoint = "bottom" relativeTo = "$parent">
+            <AbsPoint x = "150" y = "-50"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_panel.toggle_setup"/></EventHandlers>
+            <Size><AbsPoint x="64" y="24" /></Size>
+            <TexCoords>
+                <Normal          x="0"    y="120" /><NormalHighlit   x="64"   y="120" />
+                <Pressed         x="128"  y="120" /><Disabled        x="192"  y="120" />
+            </TexCoords>
+         </Button>
+
+
+
+
+
+<!-------------------------------------------------------------------------------------------------------------->
+
+         </Windows>
+      </Window>
+   </Windows>
+</Interface>

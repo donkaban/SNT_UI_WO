@@ -1,0 +1,14 @@
+<Interface xmlns:xsi="http://www.w3.org/1001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+    <Windows>
+        <DynamicImage name="LibSurveyor_1_PinTemplate" layer="background">
+            <Size>
+                <AbsPoint x="25" y="25" />
+            </Size>
+            <Anchors>
+                <Anchor point="topleft" relativePoint="topleft" relativeTo="">
+                    <AbsPoint x="0" y="0" />
+                </Anchor>
+            </Anchors>
+        </DynamicImage>
+    </Windows>
+</Interface>

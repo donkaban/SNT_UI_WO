@@ -1,0 +1,8 @@
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+   <Assets>
+   <!-- add your textures here -------------------------------------------------------------------->
+   <Texture name="example1" file="user_textures/example1.dds" />
+   <Texture name="example2" file="user_textures/example2.dds" />
+
+   </Assets>
+</Interface>

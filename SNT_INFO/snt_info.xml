@@ -1,0 +1,228 @@
+<Interface xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation = "../../Interface.xsd">
+   <Assets>
+      <Texture name="snt_info_textures"      file="artwork/textures.dds"/>
+      <Texture name="snt_info_icons"         file="artwork/icons.dds"/>
+      <Texture name="snt_info_font"          file="artwork/font.dds"/>
+      <Texture name="snt_info_setup_texture" file="artwork/settings.dds"/>
+   </Assets>
+   <Windows>
+
+    <HorizontalResizeImage name="SNT_INFO_BAR" texture="snt_info_textures"><Size> <AbsPoint x="32" y="32" /></Size>
+      <Sizes left="0" middle="32" right="0" />
+         <TexCoords>
+            <Left    x="96"  y="0" />
+            <Middle  x="96"  y="0" />
+            <Right   x="96"  y="0" />
+         </TexCoords>
+    </HorizontalResizeImage>
+   
+    <DynamicImage name = "SNT_LETTER" layer="secondary">
+      <Size> <AbsPoint x = "16" y = "24"/> </Size>
+    </DynamicImage>
+
+
+<!---------------------------------------------------------------------------------------------------------------->
+      <Window name="SNT_INFO_TPL" layer="secondary" popable="false" handleinput="true" savesettings="true">
+         <Anchors><Anchor point = "center"relativePoint = "center"relativeTo = "Root"> </Anchor></Anchors>
+         <Windows>
+            <DynamicImage name = "$parent_left" layer="background">
+               <Size> <AbsPoint x = "32" y = "32"/> </Size>
+               <Anchors> <Anchor point = "left" relativeTo = "$parent" relativePoint = "left"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            </DynamicImage>
+            <DynamicImage name = "$parent_center" layer="background">
+               <Anchors> <Anchor point = "left" relativeTo = "$parent" relativePoint = "left"> <AbsPoint x = "32" y = "0"/></Anchor></Anchors>
+            </DynamicImage>
+            <DynamicImage name = "$parent_right" layer="background">
+               <Size> <AbsPoint x = "32" y = "32"/> </Size>
+               <Anchors> <Anchor point = "right" relativeTo = "$parent_center" relativePoint = "left"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            </DynamicImage>
+            <DynamicImage name = "$parent_icon" layer="background">
+               <Size> <AbsPoint x = "32" y = "32"/> </Size>
+               <Anchors> <Anchor point = "left" relativeTo = "$parent" relativePoint = "left"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            </DynamicImage>
+            <StatusBar name="$parent_status" foreground= "SNT_INFO_BAR" >
+               <Anchors><Anchor point="left" relativePoint="left" relativeTo = "$parent"> <AbsPoint x="32" y="0" /></Anchor></Anchors>
+            </StatusBar>
+
+         </Windows>
+      </Window>
+
+
+<!---------------------------------------------------------------------------------------------------------------->
+
+   <Window name = "SNT_INFO_SETUP_WINDOW" movable = "true" layer = "secondary" savesettings = "false">
+      <Size> <AbsPoint x = "512" y = "512"/> </Size>
+      <Anchors> <Anchor point = "center"relativePoint = "center" relativeTo = "Root"><AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+      <Windows>
+         <DynamicImage name = "$parent_back" layer="background" texture="snt_info_setup_texture">
+            <Size> <AbsPoint x = "512" y = "512"/> </Size>
+            <Anchors> <Anchor point = "left" relativeTo = "$parent" relativePoint = "left"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            <TexCoords x="0" y="0" />
+         </DynamicImage>
+
+         <Button name = "$parent_reload_ui" inherits = "EA_Button_DefaultResizeable" layer = "popup">
+            <Size> <AbsPoint x = "120" y = "40"/> </Size>
+            <Anchors><Anchor point = "bottom" relativePoint = "bottom" relativeTo = ""><AbsPoint x = "0" y = "-15"/></Anchor></Anchors>
+            <EventHandlers> <EventHandler event = "OnLButtonUp" function = "InterfaceCore.ReloadUI"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_close" inherits = "EA_Button_DefaultResizeable" layer = "popup">
+            <Size><AbsPoint x = "120" y = "40"/></Size>
+            <Anchors><Anchor point = "bottom" relativePoint = "bottom" relativeTo = ""><AbsPoint x = "150" y = "-15"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.toggle_setup"/></EventHandlers>
+         </Button>
+
+
+         <Button name = "$parent_B0" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "46" y = "90"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.B0"/></EventHandlers>
+         </Button>
+         <Button name = "$parent_B1" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "46" y = "126"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.B1"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_B2" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "46" y = "162"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.B2"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_B3" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "46" y = "198"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.B3"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_F0" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "286" y = "88"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.F0"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_F1" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "286" y = "112"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.F1"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_F2" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "286" y = "136"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.F2"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_F3" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "286" y = "160"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.F3"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_F4" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "286" y = "184"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.F4"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_F5" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "286" y = "208"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.F5"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_F6" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "286" y = "232"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.F6"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_F7" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "286" y = "256"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.F7"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_I0" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "286" y = "328"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.I0"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_I1" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "286" y = "360"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.I1"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_I2" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "286" y = "392"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.I2"/></EventHandlers>
+         </Button>
+
+         <Button name = "$parent_I3" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+            <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+            <AbsPoint x = "286" y = "424"/> </Anchor> </Anchors>
+            <EventHandlers><EventHandler event = "OnLButtonUp" function = "snt_info.I3"/></EventHandlers>
+         </Button>
+
+         <SliderBar name = "$parent_SR" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "176" y = "24"/></Size>
+             <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "48" y = "272"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_info.slider_change"/></EventHandlers>
+         </SliderBar>
+         <SliderBar name = "$parent_SG" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "176" y = "24"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "48" y = "312"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_info.slider_change"/></EventHandlers>
+         </SliderBar>
+         <SliderBar name = "$parent_SB" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "176" y = "24"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "48" y = "352"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_info.slider_change"/></EventHandlers>
+         </SliderBar>
+         <SliderBar name = "$parent_SA" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "176" y = "24"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "48" y = "392"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_info.slider_change"/></EventHandlers>
+         </SliderBar>
+         <SliderBar name = "$parent_SS" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "176" y = "24"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "48" y = "432"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_info.slider_change"/></EventHandlers>
+         </SliderBar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </Windows>
+   </Window>
+
+
+
+
+
+
+
+ 
+   </Windows>
+</Interface>

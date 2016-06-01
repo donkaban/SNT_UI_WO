@@ -1,0 +1,175 @@
+------------------------------------------------------------------------
+r23 | nevir27 | 2008-11-22 21:23:01 +0000 (Sat, 22 Nov 2008) | 1 line
+Changed paths:
+   A /tags/v0.2 (from /trunk:22)
+
+A complete rewrite to LibSurveyor to a much cleaner API.  Also, all zone offsets should be working now (Badlands and adjacent zones have been corrected)
+------------------------------------------------------------------------
+r22 | nevir27 | 2008-11-22 21:12:58 +0000 (Sat, 22 Nov 2008) | 1 line
+Changed paths:
+   A /trunk/Classes
+   A /trunk/Classes/Display.lua
+   A /trunk/Classes/Pin.lua
+   A /trunk/Classes/PinType.lua
+   A /trunk/Classes/Point.lua
+   D /trunk/Data/Data.lua
+   M /trunk/Data/ZoneOffsets.lua
+   A /trunk/Database.lua
+   D /trunk/Display.lua
+   D /trunk/EventHandlers.lua
+   A /trunk/LibStub.lua
+   M /trunk/LibSurveyor.lua
+   M /trunk/LibSurveyor.mod
+   D /trunk/PinTypes
+   A /trunk/PlayerLocation.lua
+   D /trunk/Tests
+   A /trunk/Windows.xml
+
+Total rewrite of LibSurveyor.  We now use a much cleaner, and hopefully more sane, objective-oriented API
+------------------------------------------------------------------------
+r21 | nevir27 | 2008-11-14 07:13:53 +0000 (Fri, 14 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/Data/Data.lua
+   M /trunk/Data/ZoneOffsets.lua
+   M /trunk/Display.lua
+   M /trunk/EventHandlers.lua
+   M /trunk/LibSurveyor.lua
+   M /trunk/LibSurveyor.mod
+   A /trunk/PinTypes/Notes.lua
+   M /trunk/PinTypes/PinTypeTemplates.xml
+   M /trunk/PinTypes/PinTypes.lua
+   M /trunk/PinTypes/Tome.lua
+   M /trunk/SavedVariables.lua
+   M /trunk/Tests/Location.lua
+   M /trunk/Tests/PinTypes.lua
+   M /trunk/Tests/Pins.lua
+   M /trunk/Tests/Retrieval.lua
+   M /trunk/Tests/Runner.lua
+   M /trunk/Tests/Suite.lua
+   M /trunk/Tests/run_suite.rb
+
+Lots o changes.  Switch from sub types to filter as a terminology change.  cleanup, and fixed a couple zone offsets
+------------------------------------------------------------------------
+r19 | nevir27 | 2008-10-20 01:12:38 +0000 (Mon, 20 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/EventHandlers.lua
+
+Whoops. checked in some spammy debug messages
+------------------------------------------------------------------------
+r17 | nevir27 | 2008-10-19 19:04:25 +0000 (Sun, 19 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Data/ZoneOffsets.lua
+   M /trunk/EventHandlers.lua
+   M /trunk/LibSurveyor.lua
+   M /trunk/Tests/Location.lua
+
+Fix for Ekrund and Mount Bloodhorn offsets
+------------------------------------------------------------------------
+r15 | nevir27 | 2008-10-19 18:24:04 +0000 (Sun, 19 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Data/ZoneOffsets.lua
+
+Altdorf as well
+------------------------------------------------------------------------
+r13 | nevir27 | 2008-10-19 17:56:12 +0000 (Sun, 19 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Data/ZoneOffsets.lua
+
+Every campaign zone except Altdorf
+------------------------------------------------------------------------
+r11 | nevir27 | 2008-10-19 13:45:56 +0000 (Sun, 19 Oct 2008) | 1 line
+Changed paths:
+   M /trunk
+   M /trunk/Data
+   M /trunk/Display.lua
+   M /trunk/EventHandlers.lua
+   M /trunk/LibSurveyor.lua
+   M /trunk/PinTypes
+   M /trunk/Tests
+   A /trunk/Tests/Location.lua
+   M /trunk/Tests/Retrieval.lua
+   M /trunk/Tests/Suite.lua
+   D /trunk/Tests/TestFramework.lua
+   M /trunk/Tests/run_suite.rb
+
+Huge set of changes and fixes.  Unit tests are nearly complete.  Removed any API's related to world coordinates that were missing a zoneId argument
+------------------------------------------------------------------------
+r10 | nevir27 | 2008-10-14 21:32:37 +0000 (Tue, 14 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Data/ZoneOffsets.lua
+   M /trunk/LibSurveyor.lua
+   M /trunk/LibSurveyor.mod
+   M /trunk/PinTypes/Tome.lua
+   D /trunk/State.lua
+   M /trunk/Tests/PinTypes.lua
+   A /trunk/Tests/Pins.lua
+   A /trunk/Tests/Retrieval.lua
+   M /trunk/Tests/Runner.lua
+   M /trunk/Tests/Suite.lua
+   M /trunk/Tests/run_suite.rb
+
+A few tweaks and bugfixes as well as quite a few new unit tests
+------------------------------------------------------------------------
+r9 | nevir27 | 2008-10-14 02:43:48 +0000 (Tue, 14 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/LibSurveyor.lua
+   A /trunk/Tests
+   A /trunk/Tests/PinTypes.lua
+   A /trunk/Tests/Runner.lua
+   A /trunk/Tests/Suite.lua
+   A /trunk/Tests/TestFramework.lua
+   A /trunk/Tests/run_suite.rb
+
+initial unit tests for pin types and a few fixes
+------------------------------------------------------------------------
+r7 | nevir27 | 2008-10-11 13:45:15 +0000 (Sat, 11 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/LibSurveyor.lua
+
+Fixing the totally broken CreatePin in regard to pin types
+------------------------------------------------------------------------
+r5 | nevir27 | 2008-10-10 15:28:26 +0000 (Fri, 10 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/LibSurveyor.lua
+
+We're going to need zoneId after all...
+------------------------------------------------------------------------
+r3 | nevir27 | 2008-10-10 06:26:56 +0000 (Fri, 10 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Data/ZoneOffsets.lua
+   M /trunk/Display.lua
+   A /trunk/EventHandlers.lua (from /trunk/Events.lua:2)
+   D /trunk/Events.lua
+   M /trunk/LibSurveyor.lua
+   M /trunk/LibSurveyor.mod
+   M /trunk/PinTypes/Tome.lua
+   M /trunk/State.lua
+
+Working much more nicely now.  The tome will keep track of states and more
+------------------------------------------------------------------------
+r2 | nevir27 | 2008-10-10 02:23:44 +0000 (Fri, 10 Oct 2008) | 1 line
+Changed paths:
+   A /trunk/Data
+   A /trunk/Data/Data.lua
+   A /trunk/Data/ZoneOffsets.lua
+   A /trunk/Display.lua
+   A /trunk/Events.lua
+   A /trunk/LibSurveyor.lua
+   A /trunk/LibSurveyor.mod
+   A /trunk/PinTypes
+   A /trunk/PinTypes/PinTypeTemplates.xml
+   A /trunk/PinTypes/PinTypes.lua
+   A /trunk/PinTypes/Tome.lua
+   A /trunk/SavedVariables.lua
+   A /trunk/State.lua
+
+Initial Commit
+------------------------------------------------------------------------
+r1 | root | 2008-10-09 17:56:00 +0000 (Thu, 09 Oct 2008) | 1 line
+Changed paths:
+   A /branches
+   A /tags
+   A /trunk
+
+"lib_surveyor/mainline: Initial Import"
+------------------------------------------------------------------------

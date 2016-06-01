@@ -1,0 +1,464 @@
+<Interface xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation = "../../Interface.xsd">
+   <Assets>
+      <Texture name="buttons"  file="artwork/buttons.dds"/>
+      <Texture name="snt_buttons_setup_texture" file="artwork/settings.dds"/>
+   </Assets>
+<!-------------------------------------------------------------------------------------------------------------->
+    <Windows>
+      <Window name="SNT_BUTTONS_FLASH" inherits="EA_Window_Default" movable="false" savesettings = "false"> 
+         <Windows>
+            <DynamicImage name="$parenticon">
+            <Anchors>
+               <Anchor point="topleft" relativeTo="" relativePoint="topleft" />
+               <Anchor point="bottomright" relativeTo="" relativePoint="bottomright" />
+            </Anchors>
+            </DynamicImage>
+          <DynamicImage name="$parentborder">
+            <Anchors>
+               <Anchor point="topleft" relativeTo="" relativePoint="topleft" />
+               <Anchor point="bottomright" relativeTo="" relativePoint="bottomright" />
+            </Anchors>
+         </DynamicImage>
+         </Windows>
+      </Window>
+<!-------------------------------------------------------------------------------------------------------------->
+   <Window name="SNT_BUTTONS_FLASH_ANCHOR" inherits="EA_Window_Default" movable="false" savesettings = "false"> 
+   </Window>
+
+<!-------------------------------------------------------------------------------------------------------------->
+
+      <Window name = "SNT_BUTTONS_SETUP" movable = "true" layer = "secondary" savesettings = "false">
+         <Size> <AbsPoint x = "640" y = "512"/> </Size>
+         <Anchors> <Anchor point = "center"relativePoint = "center" relativeTo = "Root"><AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+         <Windows>
+            <DynamicImage name = "$parent_back" layer="background" texture = "snt_buttons_setup_texture">
+               <Size> <AbsPoint x = "640" y = "512"/> </Size>
+               <Anchors> <Anchor point = "left" relativeTo = "$parent" relativePoint = "left"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+               <TexCoords x="0" y="0" />
+            </DynamicImage>
+
+            <Button name = "$parent1_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "22" y = "78"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set01"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent2_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "22" y = "122"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set02"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent3_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "22" y = "164"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set03"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent4_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "22" y = "208"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set04"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent5_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "22" y = "252"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set05"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent6_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "22" y = "294"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set06"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent7_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "22" y = "338"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set07"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent8_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "22" y = "380"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set08"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent9_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "102" y = "78"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set09"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent10_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "102" y = "122"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set10"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent11_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "102" y = "164"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set11"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent12_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "102" y = "208"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set12"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent13_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "102" y = "252"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set13"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent14_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "102" y = "294"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set14"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent15_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "102" y = "338"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set15"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent16_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "102" y = "380"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.set16"/>
+               </EventHandlers>
+            </Button>
+
+
+<!-------------------------------------------------------------------------------------------------------------->
+
+            <Button name="$parent_b1l" inherits="EA_Button_DefaultLeftArrow">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "320" y = "70"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b1l"/>
+               </EventHandlers>
+            </Button>
+            <Button name="$parent_b1r" inherits="EA_Button_DefaultRightArrow">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "372" y = "70"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b1r"/>
+               </EventHandlers>
+            </Button>
+            <Label name = "$parent_b1_lab"font = "font_clear_small_bold" textalign = "center" layer = "popup" popable = "false" handleinput = "false">
+               <Size><AbsPoint x = "52" y = "22"/> </Size>
+               <Color r = "255" g = "255" b = "175" a = "255"/> 
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "334" y = "72"/> </Anchor> </Anchors>
+             </Label>            
+            <Button name = "$parent_b12" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "374" y = "98"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b12"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent_b13" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "374" y = "122"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b13"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent_b14" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "374" y = "146"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b14"/>
+               </EventHandlers>
+            </Button>
+
+<!-------------------------------------------------------------------------------------------------------------->
+            <Button name="$parent_b2l" inherits="EA_Button_DefaultLeftArrow">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "528" y = "70"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b2l"/>
+               </EventHandlers>
+            </Button>
+            <Button name="$parent_b2r" inherits="EA_Button_DefaultRightArrow">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "580" y = "70"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b2r"/>
+               </EventHandlers>
+            </Button>
+            <Label name = "$parent_b2_lab"font = "font_clear_small_bold" textalign = "center" layer = "popup" popable = "false" handleinput = "false">
+               <Size><AbsPoint x = "52" y = "22"/> </Size>
+               <Color r = "255" g = "255" b = "175" a = "255"/> 
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "542" y = "72"/> </Anchor> </Anchors>
+             </Label>            
+              
+            <Button name = "$parent_b22" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "98"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b22"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent_b23" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "122"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b23"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent_b24" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "146"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b24"/>
+               </EventHandlers>
+            </Button>
+
+
+<!-------------------------------------------------------------------------------------------------------------->
+
+             <Button name="$parent_b3l" inherits="EA_Button_DefaultLeftArrow">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "320" y = "198"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b3l"/>
+               </EventHandlers>
+            </Button>
+            <Button name="$parent_b3r" inherits="EA_Button_DefaultRightArrow">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "372" y = "198"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b3r"/>
+               </EventHandlers>
+            </Button>
+            <Label name = "$parent_b3_lab"font = "font_clear_small_bold" textalign = "center" layer = "popup" popable = "false" handleinput = "false">
+               <Size><AbsPoint x = "52" y = "22"/> </Size>
+               <Color r = "255" g = "255" b = "175" a = "255"/> 
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "334" y = "200"/> </Anchor> </Anchors>
+             </Label>            
+       
+            <Button name = "$parent_b32" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "374" y = "226"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b32"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent_b33" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "374" y = "250"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b33"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent_b34" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "374" y = "274"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b34"/>
+               </EventHandlers>
+            </Button>
+
+<!-------------------------------------------------------------------------------------------------------------->
+            <Button name="$parent_b4l" inherits="EA_Button_DefaultLeftArrow">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "528" y = "198"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b4l"/>
+               </EventHandlers>
+            </Button>
+            <Button name="$parent_b4r" inherits="EA_Button_DefaultRightArrow">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "580" y = "198"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b4r"/>
+               </EventHandlers>
+            </Button>
+            <Label name = "$parent_b4_lab"font = "font_clear_small_bold" textalign = "center" layer = "popup" popable = "false" handleinput = "false">
+               <Size><AbsPoint x = "52" y = "22"/> </Size>
+               <Color r = "255" g = "255" b = "175" a = "255"/> 
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "542" y = "200"/> </Anchor> </Anchors>
+             </Label>            
+       
+       
+            <Button name = "$parent_b42" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "226"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b42"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent_b43" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "250"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b43"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent_b44" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "274"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.b44"/>
+               </EventHandlers>
+            </Button>
+
+
+
+<!-------------------------------------------------------------------------------------------------------------->
+
+            <Button name = "$parent_cd1" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "329"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.cd1"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent_cd2" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "353"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.cd2"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent_cd3" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "377"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.cd3"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent_cd4" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "401"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.cd4"/>
+               </EventHandlers>
+            </Button>
+
+            <Button name = "$parent_cd5" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "425"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.cd5"/>
+               </EventHandlers>
+            </Button>
+            <Button name = "$parent_cd6" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "449"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.cd6"/>
+               </EventHandlers>
+            </Button>
+            <Button name = "$parent_cd7" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "582" y = "473"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_buttons.cd7"/>
+               </EventHandlers>
+            </Button>
+
+         <SliderBar name = "$parent_A1" inherits = "EA_Default_SliderBar">
+            <Size><AbsPoint x = "168" y = "32"/></Size>
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "224" y = "344"/></Anchor></Anchors>
+            <EventHandlers><EventHandler event = "OnSlide" function = "snt_buttons.slider_change"/></EventHandlers>
+         </SliderBar>
+
+       <EditBox name="$parent_T1" inherits="EA_EditBox_NoFrame" scrolling="none" input="numbers" maxChars="4">
+            <Size><AbsPoint x="48" y="28" /></Size>
+            <EventHandlers><EventHandler event="OnKeyEnter" function="snt_buttons.text_input" /></EventHandlers>
+            <TextOffset x="6" y="2" />
+            <Anchors><Anchor point = "topleft" relativePoint = "topleft"relativeTo = "$parent">
+            <AbsPoint x = "352" y = "400"/></Anchor></Anchors>
+        </EditBox>
+
+
+
+
+
+
+
+
+<!-------------------------------------------------------------------------------------------------------------->
+                <Button name = "$parent_reload" inherits = "EA_Button_DefaultResizeable" layer = "popup">
+                    <Size> <AbsPoint x = "150" y = "40"/> </Size>
+                    <Anchors>
+                        <Anchor point = "bottom" relativePoint = "bottom" relativeTo = "">
+                            <AbsPoint x = "-184" y = "-20"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event = "OnLButtonUp" function = "InterfaceCore.ReloadUI"/>
+                    </EventHandlers>
+                </Button>
+                <Button name = "$parent_close" inherits = "EA_Button_DefaultResizeable" layer = "popup">
+                    <Size>
+                        <AbsPoint x = "150" y = "40"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point = "bottom" relativePoint = "bottom" relativeTo = "">
+                            <AbsPoint x = "-30" y = "-20"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event = "OnLButtonUp" function = "snt_buttons.toggle_setup"/>
+                    </EventHandlers>
+                </Button>
+            </Windows>
+        </Window>
+    </Windows>
+</Interface>

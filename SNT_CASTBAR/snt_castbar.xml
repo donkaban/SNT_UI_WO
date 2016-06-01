@@ -1,0 +1,421 @@
+<Interface xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation = "../../Interface.xsd">
+   <Assets>
+      <Texture name="snt_castbar_textures"          file="artwork/textures.dds"/>
+      <Texture name="snt_castbar_setup_texture"     file="artwork/settings.dds"/>
+ </Assets>
+   <Windows>
+
+<!---------------------------------------------------------------------------------------------------------------->
+      <Window name="SNT_CAST_TPL_1" popable="false" handleinput="false">
+         <Size><AbsPoint x="512" y="38" /></Size>
+         <Anchors><Anchor point = "center" relativeTo = "Root" relativePoint = "center"> <AbsPoint x = "0" y = "-200"/></Anchor></Anchors>
+         <EventHandlers><EventHandler event="OnUpdate" function="snt_castbar.update" /></EventHandlers>
+         <Windows>
+            <DynamicImage name = "$parent_back" layer="background" texture="snt_castbar_textures">
+               <Size> <AbsPoint x = "512" y = "38"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "topleft"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            <TexCoords x="0" y="32" />
+            </DynamicImage>
+            <DynamicImage name = "$parent_action_icon" layer="background">
+               <Size> <AbsPoint x = "32" y = "32"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "ltopeft"> <AbsPoint x = "3" y = "3"/></Anchor></Anchors>
+            </DynamicImage>
+            <Label name="$parent_action_name" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="471" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="38" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="255" a="255" />
+            </Label>
+            <Label name="$parent_action_time" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="64" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="445" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="0" a="255" />
+            </Label>
+            <StatusBar name="$parent_action_status" foreground="ST1" >
+               <Size> <AbsPoint x = "466" y = "32"/> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="42" y="3" /></Anchor></Anchors>
+            </StatusBar>
+            <HorizontalResizeImage name="ST1" texture="snt_castbar_textures"><Size> <AbsPoint x="32" y="30" /></Size>
+               <Sizes left="2" middle="32" right="2" />
+                  <TexCoords>
+                  <Left    x="0" y="0" />
+                  <Middle  x="0" y="0" />
+                  <Right   x="0" y="0" />
+                  </TexCoords>
+            </HorizontalResizeImage>
+         </Windows>
+      </Window>
+<!---------------------------------------------------------------------------------------------------------------->
+      <Window name="SNT_CAST_TPL_2" popable="false" handleinput="false">
+         <Size><AbsPoint x="512" y="38" /></Size>
+         <Anchors><Anchor point = "center" relativeTo = "Root" relativePoint = "center"> <AbsPoint x = "0" y = "-200"/></Anchor></Anchors>
+         <EventHandlers><EventHandler event="OnUpdate" function="snt_castbar.update" /></EventHandlers>
+         <Windows>
+            <DynamicImage name = "$parent_back" layer="background" texture="snt_castbar_textures">
+               <Size> <AbsPoint x = "512" y = "38"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "topleft"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            <TexCoords x="0" y="70" />
+            </DynamicImage>
+            <DynamicImage name = "$parent_action_icon" layer="background">
+               <Size> <AbsPoint x = "32" y = "32"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "ltopeft"> <AbsPoint x = "3" y = "3"/></Anchor></Anchors>
+            </DynamicImage>
+            <Label name="$parent_action_name" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="471" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="38" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="255" a="255" />
+            </Label>
+            <Label name="$parent_action_time" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="64" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="445" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="0" a="255" />
+            </Label>
+            <StatusBar name="$parent_action_status" foreground="ST2" >
+               <Size> <AbsPoint x = "466" y = "32"/> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="42" y="3" /></Anchor></Anchors>
+            </StatusBar>
+            <HorizontalResizeImage name="ST2" texture="snt_castbar_textures"><Size> <AbsPoint x="32" y="30" /></Size>
+               <Sizes left="0" middle="32" right="0" />
+                  <TexCoords>
+                  <Left x="32" y="0" />
+                  <Middle x="32" y="0" />
+                  <Right x="32" y="0" />
+                  </TexCoords>
+            </HorizontalResizeImage>
+         </Windows>
+      </Window>
+<!---------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------->
+      <Window name="SNT_CAST_TPL_3" popable="false" handleinput="false">
+         <Size><AbsPoint x="512" y="38" /></Size>
+         <Anchors><Anchor point = "center" relativeTo = "Root" relativePoint = "center"> <AbsPoint x = "0" y = "-200"/></Anchor></Anchors>
+         <EventHandlers><EventHandler event="OnUpdate" function="snt_castbar.update" /></EventHandlers>
+         <Windows>
+            <DynamicImage name = "$parent_back" layer="background" texture="snt_castbar_textures">
+               <Size> <AbsPoint x = "512" y = "38"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "topleft"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            <TexCoords x="0" y="108" />
+            </DynamicImage>
+            <DynamicImage name = "$parent_action_icon" layer="background">
+               <Size> <AbsPoint x = "32" y = "32"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "ltopeft"> <AbsPoint x = "3" y = "3"/></Anchor></Anchors>
+            </DynamicImage>
+            <Label name="$parent_action_name" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="471" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="38" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="255" a="255" />
+            </Label>
+            <Label name="$parent_action_time" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="64" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="445" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="0" a="255" />
+            </Label>
+            <StatusBar name="$parent_action_status" foreground="ST3" >
+               <Size> <AbsPoint x = "466" y = "32"/> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="42" y="3" /></Anchor></Anchors>
+            </StatusBar>
+            <HorizontalResizeImage name="ST3" texture="snt_castbar_textures"><Size> <AbsPoint x="32" y="30" /></Size>
+               <Sizes left="0" middle="32" right="0" />
+                  <TexCoords>
+                  <Left x="64" y="0" />
+                  <Middle x="64" y="0" />
+                  <Right x="64" y="0" />
+                  </TexCoords>
+            </HorizontalResizeImage>
+         </Windows>
+      </Window>
+<!---------------------------------------------------------------------------------------------------------------->
+      <Window name="SNT_CAST_TPL_4" popable="false" handleinput="false">
+         <Size><AbsPoint x="512" y="38" /></Size>
+         <Anchors><Anchor point = "center" relativeTo = "Root" relativePoint = "center"> <AbsPoint x = "0" y = "-200"/></Anchor></Anchors>
+         <EventHandlers><EventHandler event="OnUpdate" function="snt_castbar.update" /></EventHandlers>
+         <Windows>
+            <DynamicImage name = "$parent_back" layer="background" texture="snt_castbar_textures">
+               <Size> <AbsPoint x = "512" y = "38"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "topleft"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            <TexCoords x="0" y="146" />
+            </DynamicImage>
+            <DynamicImage name = "$parent_action_icon" layer="background">
+               <Size> <AbsPoint x = "32" y = "32"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "ltopeft"> <AbsPoint x = "3" y = "3"/></Anchor></Anchors>
+            </DynamicImage>
+            <Label name="$parent_action_name" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="471" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="38" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="255" a="255" />
+            </Label>
+            <Label name="$parent_action_time" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="64" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="445" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="0" a="255" />
+            </Label>
+            <StatusBar name="$parent_action_status" foreground="ST4" >
+               <Size> <AbsPoint x = "466" y = "32"/> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="42" y="3" /></Anchor></Anchors>
+            </StatusBar>
+            <HorizontalResizeImage name="ST4" texture="snt_castbar_textures"><Size> <AbsPoint x="32" y="30" /></Size>
+               <Sizes left="0" middle="32" right="0" />
+                  <TexCoords>
+                  <Left x="96" y="0" />
+                  <Middle x="96" y="0" />
+                  <Right x="96" y="0" />
+                  </TexCoords>
+            </HorizontalResizeImage>
+         </Windows>
+      </Window>
+<!---------------------------------------------------------------------------------------------------------------->
+      <Window name="SNT_CAST_TPL_5" popable="false" handleinput="false">
+         <Size><AbsPoint x="512" y="38" /></Size>
+         <Anchors><Anchor point = "center" relativeTo = "Root" relativePoint = "center"> <AbsPoint x = "0" y = "-200"/></Anchor></Anchors>
+         <EventHandlers><EventHandler event="OnUpdate" function="snt_castbar.update" /></EventHandlers>
+         <Windows>
+            <DynamicImage name = "$parent_back" layer="background" texture="snt_castbar_textures">
+               <Size> <AbsPoint x = "512" y = "38"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "topleft"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            <TexCoords x="0" y="184" />
+            </DynamicImage>
+            <DynamicImage name = "$parent_action_icon" layer="background">
+               <Size> <AbsPoint x = "32" y = "32"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "ltopeft"> <AbsPoint x = "3" y = "3"/></Anchor></Anchors>
+            </DynamicImage>
+            <Label name="$parent_action_name" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="471" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="38" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="255" a="255" />
+            </Label>
+            <Label name="$parent_action_time" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="64" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="445" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="0" a="255" />
+            </Label>
+            <StatusBar name="$parent_action_status" foreground="ST5" >
+               <Size> <AbsPoint x = "466" y = "32"/> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="42" y="3" /></Anchor></Anchors>
+            </StatusBar>
+            <HorizontalResizeImage name="ST5" texture="snt_castbar_textures"><Size> <AbsPoint x="32" y="30" /></Size>
+               <Sizes left="0" middle="32" right="0" />
+                  <TexCoords>
+                  <Left x="128" y="0" />
+                  <Middle x="128" y="0" />
+                  <Right x="128" y="0" />
+                  </TexCoords>
+            </HorizontalResizeImage>
+         </Windows>
+      </Window>
+<!---------------------------------------------------------------------------------------------------------------->
+      <Window name="SNT_CAST_TPL_6" popable="false" handleinput="false">
+         <Size><AbsPoint x="512" y="38" /></Size>
+         <Anchors><Anchor point = "center" relativeTo = "Root" relativePoint = "center"> <AbsPoint x = "0" y = "-200"/></Anchor></Anchors>
+         <EventHandlers><EventHandler event="OnUpdate" function="snt_castbar.update" /></EventHandlers>
+         <Windows>
+            <DynamicImage name = "$parent_back" layer="background" texture="snt_castbar_textures">
+               <Size> <AbsPoint x = "512" y = "38"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "topleft"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            <TexCoords x="0" y="222" />
+            </DynamicImage>
+            <DynamicImage name = "$parent_action_icon" layer="background">
+               <Size> <AbsPoint x = "32" y = "32"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "ltopeft"> <AbsPoint x = "3" y = "3"/></Anchor></Anchors>
+            </DynamicImage>
+            <Label name="$parent_action_name" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="471" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="38" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="255" a="255" />
+            </Label>
+            <Label name="$parent_action_time" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="64" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="445" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="0" a="255" />
+            </Label>
+            <StatusBar name="$parent_action_status" foreground="ST6" >
+               <Size> <AbsPoint x = "466" y = "32"/> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="42" y="3" /></Anchor></Anchors>
+            </StatusBar>
+            <HorizontalResizeImage name="ST6" texture="snt_castbar_textures"><Size> <AbsPoint x="32" y="30" /></Size>
+               <Sizes left="0" middle="32" right="0" />
+                  <TexCoords>
+                  <Left x="160" y="0" />
+                  <Middle x="160" y="0" />
+                  <Right x="160" y="0" />
+                  </TexCoords>
+            </HorizontalResizeImage>
+         </Windows>
+      </Window>
+<!---------------------------------------------------------------------------------------------------------------->
+      <Window name="SNT_CAST_TPL_7" popable="false" handleinput="false">
+         <Size><AbsPoint x="512" y="38" /></Size>
+         <Anchors><Anchor point = "center" relativeTo = "Root" relativePoint = "center"> <AbsPoint x = "0" y = "-200"/></Anchor></Anchors>
+         <EventHandlers><EventHandler event="OnUpdate" function="snt_castbar.update" /></EventHandlers>
+         <Windows>
+            <DynamicImage name = "$parent_back" layer="background" texture="snt_castbar_textures">
+               <Size> <AbsPoint x = "512" y = "38"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "topleft"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            <TexCoords x="0" y="260" />
+            </DynamicImage>
+            <DynamicImage name = "$parent_action_icon" layer="background">
+               <Size> <AbsPoint x = "32" y = "32"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "ltopeft"> <AbsPoint x = "3" y = "3"/></Anchor></Anchors>
+            </DynamicImage>
+            <Label name="$parent_action_name" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="471" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="38" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="255" a="255" />
+            </Label>
+            <Label name="$parent_action_time" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="64" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="445" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="0" a="255" />
+            </Label>
+            <StatusBar name="$parent_action_status" foreground="ST7" >
+               <Size> <AbsPoint x = "466" y = "32"/> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="42" y="3" /></Anchor></Anchors>
+            </StatusBar>
+            <HorizontalResizeImage name="ST7" texture="snt_castbar_textures"><Size> <AbsPoint x="32" y="30" /></Size>
+               <Sizes left="0" middle="32" right="0" />
+                  <TexCoords>
+                  <Left x="192" y="0" />
+                  <Middle x="192" y="0" />
+                  <Right x="192" y="0" />
+                  </TexCoords>
+            </HorizontalResizeImage>
+         </Windows>
+      </Window>
+<!---------------------------------------------------------------------------------------------------------------->
+      <Window name="SNT_CAST_TPL_8" popable="false" handleinput="false">
+         <Size><AbsPoint x="512" y="38" /></Size>
+         <Anchors><Anchor point = "center" relativeTo = "Root" relativePoint = "center"> <AbsPoint x = "0" y = "-200"/></Anchor></Anchors>
+         <EventHandlers><EventHandler event="OnUpdate" function="snt_castbar.update" /></EventHandlers>
+         <Windows>
+            <DynamicImage name = "$parent_back" layer="background" texture="snt_castbar_textures">
+               <Size> <AbsPoint x = "512" y = "38"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "topleft"> <AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+            <TexCoords x="0" y="298" />
+            </DynamicImage>
+            <DynamicImage name = "$parent_action_icon" layer="background">
+               <Size> <AbsPoint x = "32" y = "32"/> </Size>
+               <Anchors> <Anchor point = "topleft" relativeTo = "$parent" relativePoint = "ltopeft"> <AbsPoint x = "3" y = "3"/></Anchor></Anchors>
+            </DynamicImage>
+            <Label name="$parent_action_name" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="471" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="38" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="255" a="255" />
+            </Label>
+            <Label name="$parent_action_time" layer="secondary" font="font_default_sub_heading" handleinput="false" textalign="center">
+               <Size> <AbsPoint x="64" y="32" /> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="445" y="3" /></Anchor></Anchors>
+               <Color r="255" g="255" b="0" a="255" />
+            </Label>
+            <StatusBar name="$parent_action_status" foreground="ST8" >
+               <Size> <AbsPoint x = "466" y = "32"/> </Size>
+               <Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo = "$parent"> <AbsPoint x="42" y="3" /></Anchor></Anchors>
+            </StatusBar>
+            <HorizontalResizeImage name="ST8" texture="snt_castbar_textures"><Size> <AbsPoint x="32" y="30" /></Size>
+               <Sizes left="0" middle="32" right="0" />
+                  <TexCoords>
+                  <Left x="224" y="0" />
+                  <Middle x="224" y="0" />
+                  <Right x="224" y="0" />
+                  </TexCoords>
+            </HorizontalResizeImage>
+         </Windows>
+      </Window>
+<!---------------------------------------------------------------------------------------------------------------->
+<!--                               SETUP WINDOW                                                                 -->
+<!---------------------------------------------------------------------------------------------------------------->
+
+   <Window name = "SNT_CASTBAR_SETUP_WINDOW" movable = "true" layer = "secondary"savesettings = "false">
+         <Size> <AbsPoint x = "512" y = "512"/> </Size>
+         <Anchors> <Anchor point = "center"relativePoint = "center" relativeTo = "Root"><AbsPoint x = "0" y = "0"/></Anchor></Anchors>
+         <Windows>
+            <DynamicImage name = "$parent_back" layer="background" texture="snt_castbar_setup_texture">
+               <Size> <AbsPoint x = "512" y = "512"/> </Size>
+               <Anchors> <Anchor point = "left" relativeTo = "$parent" relativePoint = "left"> <AbsPoint x = "0" y = "0"/>
+                        </Anchor>
+               </Anchors>
+            <TexCoords x="0" y="0" />
+            </DynamicImage>
+            <!-- set buttons -->
+            <Button name = "$parent1_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "30" y = "78"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_castbar.set1"/>
+               </EventHandlers>
+            </Button>
+            <Button name = "$parent2_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "30" y = "122"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_castbar.set2"/>
+               </EventHandlers>
+            </Button>
+            <Button name = "$parent3_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "30" y = "164"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_castbar.set3"/>
+               </EventHandlers>
+            </Button>
+            <Button name = "$parent4_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "30" y = "210"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_castbar.set4"/>
+               </EventHandlers>
+            </Button>
+            <Button name = "$parent5_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "30" y = "254"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_castbar.set5"/>
+               </EventHandlers>
+            </Button>
+            <Button name = "$parent6_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "30" y = "299"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_castbar.set6"/>
+               </EventHandlers>
+            </Button>
+            <Button name = "$parent7_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "30" y = "344"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_castbar.set7"/>
+               </EventHandlers>
+            </Button>
+            <Button name = "$parent8_chk" inherits = "EA_Button_DefaultCheckBox" handleinput = "true">
+               <Anchors> <Anchor point = "topleft" relativePoint = "topleft" relativeTo = "$parent">
+                  <AbsPoint x = "30" y = "386"/> </Anchor> </Anchors>
+               <EventHandlers>
+                  <EventHandler event = "OnLButtonUp" function = "snt_castbar.set8"/>
+               </EventHandlers>
+            </Button>
+                <Button name = "$parent_reload_ui" inherits = "EA_Button_DefaultResizeable" layer = "popup">
+                    <Size> <AbsPoint x = "120" y = "40"/> </Size>
+                    <Anchors>
+                        <Anchor point = "bottom" relativePoint = "bottom" relativeTo = "">
+                            <AbsPoint x = "-150" y = "-20"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event = "OnLButtonUp" function = "InterfaceCore.ReloadUI"/>
+                    </EventHandlers>
+                </Button>
+                <Button name = "$parent_close" inherits = "EA_Button_DefaultResizeable" layer = "popup">
+                    <Size>
+                        <AbsPoint x = "120" y = "40"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point = "bottom" relativePoint = "bottom" relativeTo = "">
+                            <AbsPoint x = "150" y = "-20"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event = "OnLButtonUp" function = "snt_castbar.toggle_setup"/>
+                    </EventHandlers>
+                </Button>
+            </Windows>
+        </Window>
+
+   </Windows>
+</Interface>
